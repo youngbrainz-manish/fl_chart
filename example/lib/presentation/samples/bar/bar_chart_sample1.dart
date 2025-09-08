@@ -53,9 +53,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 4,
-                ),
+                const SizedBox(height: 4),
                 Text(
                   'Grafik konsumsi kalori',
                   style: TextStyle(
@@ -64,9 +62,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(
-                  height: 38,
-                ),
+                const SizedBox(height: 38),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -76,9 +72,7 @@ class BarChartSample1State extends State<BarChartSample1> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
+                const SizedBox(height: 12),
               ],
             ),
           ),
@@ -121,11 +115,12 @@ class BarChartSample1State extends State<BarChartSample1> {
       barRods: [
         BarChartRodData(
           toY: isTouched ? y + 1 : y,
+          // color: Colors.red,
           color: isTouched ? widget.touchedBarColor : barColor,
           width: width,
           borderSide: isTouched
               ? BorderSide(color: widget.touchedBarColor.darken(80))
-              : const BorderSide(color: Colors.white, width: 0),
+              : const BorderSide(color: Colors.red, width: 0),
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             toY: 20,
@@ -245,9 +240,7 @@ class BarChartSample1State extends State<BarChartSample1> {
           ),
         ),
       ),
-      borderData: FlBorderData(
-        show: false,
-      ),
+      borderData: FlBorderData(show: false),
       barGroups: showingGroups(),
       gridData: const FlGridData(show: false),
     );

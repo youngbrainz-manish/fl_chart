@@ -169,10 +169,7 @@ class _BarChartSample7State extends State<BarChartSample7> {
                           color: rod.color,
                           fontSize: 18,
                           shadows: const [
-                            Shadow(
-                              color: Colors.black26,
-                              blurRadius: 12,
-                            )
+                            Shadow(color: Colors.black26, blurRadius: 12)
                           ],
                         ),
                       );
@@ -230,7 +227,9 @@ class _IconWidgetState extends AnimatedWidgetBaseState<_IconWidget> {
     final rotation = math.pi * 4 * _rotationTween!.evaluate(animation);
     final scale = 1 + _rotationTween!.evaluate(animation) * 0.5;
     return Transform(
-      transform: Matrix4.rotationZ(rotation).scaledByDouble(scale, scale, scale, 1.0),
+      // transform: Matrix4.rotationZ(rotation).scaledByDouble(scale, scale, scale, 1.0),
+      transform: Matrix4.rotationZ(rotation).scaled(scale, scale, scale),
+
       origin: const Offset(14, 14),
       child: Icon(
         widget.isSelected ? Icons.face_retouching_natural : Icons.face,
@@ -246,9 +245,7 @@ class _IconWidgetState extends AnimatedWidgetBaseState<_IconWidget> {
       _rotationTween,
       widget.isSelected ? 1.0 : 0.0,
       (dynamic value) => Tween<double>(
-        begin: value as double,
-        end: widget.isSelected ? 1.0 : 0.0,
-      ),
+          begin: value as double, end: widget.isSelected ? 1.0 : 0.0),
     ) as Tween<double>?;
   }
 }

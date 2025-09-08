@@ -13,10 +13,7 @@ import 'package:go_router/go_router.dart';
 import 'chart_samples_page.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({
-    super.key,
-    required this.showingChartType,
-  }) {
+  HomePage({super.key, required this.showingChartType}) {
     _initMenuItems();
   }
 
@@ -25,11 +22,7 @@ class HomePage extends StatelessWidget {
     _menuItems = ChartType.values.mapIndexed(
       (int index, ChartType type) {
         _menuItemsIndices[type] = index;
-        return ChartMenuItem(
-          type,
-          type.displayName,
-          type.assetIcon,
-        );
+        return ChartMenuItem(type, type.displayName, type.assetIcon);
       },
     ).toList();
   }

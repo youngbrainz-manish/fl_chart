@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           useMaterial3: true,
           textTheme: GoogleFonts.assistantTextTheme(
-            Theme.of(context).textTheme.apply(
-                  bodyColor: AppColors.mainTextColor3,
-                ),
+            Theme.of(context)
+                .textTheme
+                .apply(bodyColor: AppColors.mainTextColor3),
           ),
           scaffoldBackgroundColor: AppColors.pageBackground,
         ),
